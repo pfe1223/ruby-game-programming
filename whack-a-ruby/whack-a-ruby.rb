@@ -7,8 +7,8 @@ class WhackARuby < Gosu::Window
 		@image = Gosu::Image.new('ruby.png')
 		@x = 200
 		@y = 200
-		@width = 300
-		@height = 300
+		@width = 50
+		@height = 50
 		@velocity_x = 5
 		@velocity_y = 5
 	end
