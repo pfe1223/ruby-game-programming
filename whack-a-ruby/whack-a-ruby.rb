@@ -12,12 +12,15 @@ class WhackARuby < Gosu::Window
 		@velocity_x = 5
 		@velocity_y = 5
 		@visible = 0
+		@hammer_image = Gosu::Image.new('hammer.png')
+		@hit = 0
 	end
 	
 	def draw
 		if @visible > 0
 			@image.draw(@x - @width / 2, @y - @height / 2, 1)
 		end
+		@hammer_image.draw(mouse_x - 40, mouse_y - 40, 1)
 	end
 	
 	def update
