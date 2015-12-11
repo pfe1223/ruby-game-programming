@@ -50,7 +50,7 @@ class WhackARuby < Gosu::Window
 			@velocity_x *= -1 if @x + @width / 2 > 800 || @x - @width / 2 < 0
 			@velocity_y *= -1 if @y + @height / 2 > 600 || @y - @height / 2 < 0
 			@visible -= 1
-			@visible = 30 if @visible < -10 && rand < 0.01
+			@visible = 30 if @visible < -10 && rand < 0.1
 			@time_left = (100 - (Gosu.milliseconds - @start_time) / 1000)
 			@playing = false if @time_left < 0
 		end
@@ -59,7 +59,7 @@ class WhackARuby < Gosu::Window
 	def button_down(id)
 		if @playing
 			if (id == Gosu::MsLeft)
-				if Gosu.distance(mouse_x, mouse_y, @x, @y) < 50 && @visisble >= 0
+				if Gosu.distance(mouse_x, mouse_y, @x, @y) < 50 && @visible >= 0
 					@hit = 1
 					@score += 5
 				else
