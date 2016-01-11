@@ -10,6 +10,8 @@ class Player
 		@image = Gosu::Image.new('images/ship.png')
 		@velocity_x = 0
 		@velocity_y = 0
+		@radius = 20
+		@window = window
 	end
 	
 	def draw
@@ -29,6 +31,18 @@ class Player
 		@y += @velocity_y
 		@velocity_x *= FRICTION
 		@velocity_y *= FRICTION
+		if @x > @window.width - @radius
+			@velocity_x = 0
+			@x = @window.width - @radius
+		end
+		if @x < @radius
+			@velocity_x = 0
+			@x = @radius
+		end
+		if @y > @window.height - @radius
+			@velocity_y  = 0
+			@y = @window.height - @radius
+		end
 	end
 	
 	def accelerate
