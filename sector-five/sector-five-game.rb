@@ -11,6 +11,11 @@ class SectorFive < Gosu::Window
 	def draw
 		@player.draw
 	end
+	
+	def update
+		@player.turnLeft if button_down?(Gosu::KbLeft)
+		@player.turnRight if button_down?(Gosu::KbRight)
+	end
 end
 
 window = SectorFive.new
