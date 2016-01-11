@@ -5,8 +5,8 @@ class Player
 		@angle = 0
 		@image = Gosu::Image.new('images/ship.png')
 	end
-end
-
-def draw
-	@image.draw_rot(@x, @y, 1, @angle)
+	
+	def draw
+		@image.draw_rot(@x, @y, 1, @angle)
+	end
 end
