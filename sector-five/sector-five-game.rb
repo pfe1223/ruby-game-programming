@@ -15,6 +15,8 @@ class SectorFive < Gosu::Window
 	def update
 		@player.turnLeft if button_down?(Gosu::KbLeft)
 		@player.turnRight if button_down?(Gosu::KbRight)
+		@player.accelerate if button_down?(Gosu::KbUp)
+		@player.move
 	end
 end
 
