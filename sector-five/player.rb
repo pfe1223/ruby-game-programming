@@ -2,6 +2,7 @@ class Player
 	ROTATION_SPEED = 3
 	ACCELERATION = 2
 	FRICTION = 0.9
+	attr_reader :x, :y, :angle, :radius
 	
 	def initialize(window)
 		@x = 200
@@ -42,6 +43,12 @@ class Player
 		if @y > @window.height - @radius
 			@velocity_y  = 0
 			@y = @window.height - @radius
+		end
+	end
+	
+	def button_down(id)
+		if id == Gosu::KbSpace
+			@bullets.push Bullet.new(self, @player.x, @player.y, @player.angle)
 		end
 	end
 	
