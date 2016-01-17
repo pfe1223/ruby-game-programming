@@ -1,6 +1,7 @@
 require 'gosu'
 require_relative 'player'
 require_relative 'enemy'
+require_relative 'bullet'
 
 class SectorFive < Gosu::Window
 	WIDTH = 800
@@ -12,6 +13,7 @@ class SectorFive < Gosu::Window
 		self.caption = 'Sector Five'
 		@player = Player.new(self)
 		@enemies = []
+		@bullets = []
 	end
 	
 	def draw
