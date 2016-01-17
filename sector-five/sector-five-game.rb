@@ -21,6 +21,9 @@ class SectorFive < Gosu::Window
 		@enemies.each do |enemy|
 			enemy.draw
 		end
+		@bullets.each do |bullet|
+			bullet.draw
+		end
 	end
 	
 	def update
