@@ -34,6 +34,9 @@ class SectorFive < Gosu::Window
 		@enemies.each do |enemy|
 			enemy.move
 		end
+		@bullets.each do |bullet|
+			bullet.move
+		end
 	end
 end
 
