@@ -26,6 +26,12 @@ class SectorFive < Gosu::Window
 		end
 	end
 	
+	def button_down(id)
+		if id == Gosu::KbSpace
+			@bullets.push Bullet.new(self, @player.x, @player.y, @player.angle)
+		end
+	end
+	
 	def update
 		@player.turnLeft if button_down?(Gosu::KbLeft)
 		@player.turnRight if button_down?(Gosu::KbRight)
