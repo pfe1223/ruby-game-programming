@@ -48,7 +48,7 @@ class SectorFive < Gosu::Window
 		end
 		@enemies.dup.each do |enemy|
 			@bullets.dup.each do |bullet|
-				destance = Gosu.distance(enemy.x, enemy.y, bullet.x, bullet.y)
+				distance = Gosu.distance(enemy.x, enemy.y, bullet.x, bullet.y)
 				if distance < enemy.radius + bullet.radius
 					@enemies.delete enemy
 					@bullets.delete bullet
